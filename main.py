@@ -20,7 +20,7 @@ def plot_per_orgdata(input_dir, out_dir):
     path = pathlib.Path(input_dir)
 
     # センサリスト
-    sens_list = ["gas1", "gas2", "hum"]
+    sens_list = ["sensor1", "sensor2", "sensor3"]
 
     # クラスラベルのループ
     clabel_list = sorted(path.glob('*'))
@@ -80,14 +80,14 @@ def plot_per_orgdata(input_dir, out_dir):
                     max_val = 0
                     min_val = 0
 
-                    # ガス毎にレンジを固定
-                    if sens == "gas1":
+                    # センサ毎にレンジを固定
+                    if sens == "sensor1":
                         max_val = center_val + 2000
                         min_val = center_val - 2000
-                    elif sens == "gas2":
+                    elif sens == "sensor2":
                         max_val = center_val + 800
                         min_val = center_val - 800
-                    elif sens == "hum":
+                    elif sens == "sensor3":
                         max_val = center_val + 1
                         min_val = center_val - 1
 
@@ -136,9 +136,9 @@ def augmentation(input_dir, out_dir):
     path = pathlib.Path(input_dir)
 
     # センサリスト
-    sens_list = ["gas1", "gas2", "hum"]
+    sens_list = ["sensor1", "sensor2", "sensor3"]
 
-    strength = {"gas1": 0.8, "gas2": 0.8, "hum":0.3}
+    strength = {"sensor1": 0.8, "sensor2": 0.8, "sensor3":0.3}
 
     #-----------------------------------
     # まずは旧版の拡張数を計算する
